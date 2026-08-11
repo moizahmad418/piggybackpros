@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Piggyback Pros - Expert truck-mounted forklift repair and service in Tampa Bay. Moffett, Princeton, Palfinger specialists. Mobile service, 10+ years experience.">
+    <title>Piggyback Pros | Truck-Mounted Forklift Repair Tampa Bay</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+<!-- Live Demo Bar -->
+<div class="demo-bar" role="navigation" aria-label="Demo navigation">
+  <span class="demo-bar__label"><span class="demo-bar__dot"></span>Live demo</span>
+  <div class="demo-bar__switch">
+    <button class="demo-bar__link is-active" type="button" id="pbpLiveDemoButton" aria-label="Refresh live demo and return to top">Live Demo</button>
+  </div>
+  <button class="demo-bar__info" type="button" aria-label="About this project">i</button>
+</div>
+
+<div class="demo-sheet" id="pbpDemoSheet" role="dialog" aria-modal="true" aria-label="About this project">
+  <div class="demo-sheet__box">
+    <button class="demo-sheet__close" type="button" aria-label="Close">&times;</button>
+    <h2>Truck-Mounted Forklift Service Website</h2>
+    <p class="demo-sheet__sub">Piggyback Pros &middot; portfolio live demo</p>
+
+    <p>This is a public portfolio demonstration of the Piggyback Pros website. It showcases the customer-facing website experience for a truck-mounted forklift repair and service business.</p>
+
+    <h3>What the site does</h3>
+    <ul>
+      <li>Responsive website experience for desktop, tablet and mobile</li>
+      <li>Truck-mounted forklift repair and service information</li>
+      <li>Preventive maintenance and diagnostic service sections</li>
+      <li>Service request interface with file upload and digital signature</li>
+      <li>Contact information and call-to-action interactions</li>
+      <li>Mobile-friendly navigation and service request experience</li>
+    </ul>
+
+    <h3>About this demo</h3>
+    <p>This public version is a static frontend demo intended for portfolio presentation. It does not include a private admin panel or production backend.</p>
+
+    <h3>Built with</h3>
+    <div class="demo-sheet__tags">
+      <span>HTML5</span><span>Tailwind CSS</span><span>JavaScript</span><span>Canvas</span>
+    </div>
+
+    <h3>Demo behavior</h3>
+    <p>The Live Demo button refreshes the page and returns you to the top. The website interface is presented for demonstration purposes.</p>
+  </div>
+</div>
+
+<style>
+:root {
+  --demo-ink: #0B3D54;
+  --demo-gold: #C9973E;
+}
+.demo-bar {
+  position: fixed;
+  z-index: 9000;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(9, 32, 44, 0.93);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 12px 38px rgba(0,0,0,.34), 0 0 0 1px rgba(255,255,255,.09) inset;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  max-width: calc(100vw - 24px);
+}
+.demo-bar__label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 12px 0 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: #9FB6C2;
+  white-space: nowrap;
+}
+.demo-bar__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ADE80;
+  box-shadow: 0 0 0 0 rgba(74,222,128,.65);
+  animation: demoPulse 2.4s infinite;
+}
+@keyframes demoPulse {
+  70% { box-shadow: 0 0 0 8px rgba(74,222,128,0); }
+  100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+}
+.demo-bar__switch {
+  display: flex;
+  gap: 3px;
+  padding: 3px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.08);
+}
+.demo-bar__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 0;
+  background: transparent;
+  color: #DCE7EC;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .18s ease, color .18s ease;
+}
+.demo-bar__link:hover { background: rgba(255,255,255,.12); color: #fff; }
+.demo-bar__link.is-active {
+  background: var(--demo-gold);
+  color: #17222A;
+  box-shadow: 0 3px 12px rgba(201,151,62,.42);
+}
+.demo-bar__info {
+  width: 32px;
+  height: 32px;
+  margin-right: 4px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.18);
+  background: transparent;
+  color: #B9CBD4;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: Georgia, serif;
+  cursor: pointer;
+  flex: none;
+  transition: background .18s ease, color .18s ease;
+}
+.demo-bar__info:hover { background: rgba(255,255,255,.14); color: #fff; }
+
+.demo-sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 9100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  background: rgba(7,24,33,.62);
+  backdrop-filter: blur(3px);
+}
+.demo-sheet.is-open { display: flex; }
+.demo-sheet__box {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  max-height: 84vh;
+  overflow-y: auto;
+  padding: 30px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 30px 70px rgba(0,0,0,.35);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #33414B;
+  line-height: 1.62;
+}
+.demo-sheet__box h2 {
+  margin: 0 0 4px;
+  font-family: Georgia, serif;
+  font-size: 23px;
+  color: var(--demo-ink);
+}
+.demo-sheet__sub {
+  margin: 0 0 20px;
+  font-size: 13px;
+  color: #77848D;
+}
+.demo-sheet__box h3 {
+  margin: 22px 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--demo-gold);
+}
+.demo-sheet__box p { margin: 0 0 10px; font-size: 14px; }
+.demo-sheet__box ul { margin: 0; padding-left: 18px; font-size: 14px; }
+.demo-sheet__box li { margin-bottom: 5px; }
+.demo-sheet__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.demo-sheet__tags span {
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: #F1EFE8;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--demo-ink);
+}
+.demo-sheet__close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: #F1EFE8;
+  color: #55606B;
+  font-size: 19px;
+  line-height: 1;
+  cursor: pointer;
+}
+.demo-sheet__close:hover { background: #E4E0D6; }
+@media (max-width: 640px) {
+  .demo-bar { gap: 4px; padding: 5px; bottom: 12px; }
+  .demo-bar__label { display: none; }
+  .demo-bar__link { padding: 8px 13px; font-size: 12.5px; }
+}
+@media print {
+  .demo-bar, .demo-sheet { display: none !important; }
+}
+</style>
+
+<!-- Navigation -->
+    <nav class="bg-blue-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-3 text-2xl font-bold">
+                    <img src="logo.png" alt="Piggyback Pros Logo" style="height:5rem;width:5rem;object-fit:contain;">
+                    <span><span class="text-yellow-500">PIGGYBACK</span> PROS</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-yellow-500 transition">Home</a>
+                    <a href="#services" class="hover:text-yellow-500 transition">Services</a>
+                    <a href="#about" class="hover:text-yellow-500 transition">About</a>
+                    <a href="#contact" class="hover:text-yellow-500 transition">Contact</a>
+                </div>
+                <a href="tel:8138973454" class="bg-yellow-500 text-blue-900 px-6 py-2 rounded-lg font-bold hover:bg-yellow-400 transition">
+                    📞 Call Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-5xl font-bold mb-4 leading-tight">
+                        Expert <span class="text-yellow-500">Truck-Mounted Forklift</span> Repair
+                    </h1>
+                    <p class="text-2xl mb-6 text-blue-200 font-semibold italic">
+                        Built Different. Serviced Better.
+                    </p>
+                    <p class="text-xl mb-8 leading-relaxed">
+                        11 years of experience building, servicing, and managing truck-mounted forklifts. Mobile service throughout Tampa Bay.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="bg-yellow-500 text-blue-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition text-center shadow-xl">
+                            Preventive Maintenance
+                        </a>
+                        <a href="#" class="open-service-modal bg-white text-blue-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition text-center shadow-xl">
+                            Diagnostic Services
+                        </a>
+                    </div>
+                    <div class="mt-8 flex items-center space-x-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-yellow-500">11</div>
+                            <div class="text-sm">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-yellow-500">100%</div>
+                            <div class="text-sm">Mobile Service</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-yellow-500">4hr</div>
+                            <div class="text-sm">Response Time</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-4">We Specialize In:</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">✔</span> Moffett M-Series (All Models)
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">✔</span> Princeton Piggyback Forklifts
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">✔</span> Palfinger Truck-Mounted Units
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-2">✔</span> All Major Brands
+                        </li>
+                    </ul>
+                    <div class="mt-4 flex items-center">
+                        <span class="text-yellow-500 mr-2">★</span>
+                        <span class="text-yellow-500 mr-2">★</span>
+                        <span class="text-yellow-500 mr-2">★</span>
+                        <span class="text-yellow-500 mr-2">★</span>
+                        <span class="text-yellow-500 mr-2">★</span>
+                        <span class="text-gray-600">Certified &amp; Insured</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-blue-900 text-center mb-12">Our Services</h2>
+            <p class="text-xl text-gray-600 text-center mb-12">Complete truck-mounted forklift solutions</p>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Preventive Maintenance -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-yellow-500 relative">
+                    <span class="absolute top-4 right-4 bg-yellow-500 text-white text-sm font-bold px-3 py-1 rounded-full">MOST POPULAR</span>
+                    <div class="text-3xl mb-4 text-yellow-500">🛠️</div>
+                    <h3 class="text-2xl font-bold text-blue-900 mb-4">Preventive Maintenance</h3>
+                    <p class="text-gray-700 mb-4">
+                        Keep your equipment running smoothly with scheduled maintenance programs tailored to your needs.
+                    </p>
+                    <ul class="space-y-2 text-gray-700 mb-4">
+                        <li class="flex items-center">
+                            <span class="text-blue-500 mr-2">→</span> Quarterly inspections
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-blue-500 mr-2">→</span> Hydraulic fluid service
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-blue-500 mr-2">→</span> Safety certifications
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-blue-500 mr-2">→</span> Priority emergency response
+                        </li>
+                    </ul>
+                    <a href="#contact" class="text-blue-900 font-bold hover:text-yellow-600 transition">Schedule Maintenance →</a>
+                </div>
+
+                <!-- Diagnostic Service -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-blue-500">
+                    <div class="text-3xl mb-4 text-blue-500">🔍</div>
+                    <h3 class="text-2xl font-bold text-blue-900 mb-4">Diagnostic Service</h3>
+                    <p class="text-gray-700 mb-4">
+                        Comprehensive system testing to identify problems before they cause costly downtime.
+                    </p>
+                    <ul class="space-y-2 text-gray-700 mb-4">
+                        <li class="flex items-center">
+                            <span class="text-blue-500 mr-2">→</span> Hydraulic pressure testing
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-blue-500 mr-2">→</span> Electrical system analysis
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-blue-500 mr-2">→</span> Structural inspection
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-blue-500 mr-2">→</span> Detailed photo reports
+                        </li>
+                    </ul>
+                    <a href="#" class="open-service-modal text-blue-900 font-bold hover:text-yellow-600 transition">Schedule Diagnostic →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Meet the Pro Behind Piggyback Pros</h2>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+            <!-- Story Section -->
+            <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+                <h3 class="text-2xl font-bold text-blue-900 mb-4">Experience That Sets Us Apart</h3>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Founded by <strong>Thomas Colbert</strong>, Piggyback Pros brings over <strong>11 years of unmatched experience</strong> in truck-mounted forklift operations—from the ground up, literally.
+                </p>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Thomas didn't start as a repair technician. He began his career <strong>building and customizing truck-mounted forklifts</strong>, fabricating systems from scratch and engineering solutions for demanding applications. This foundation gave him an understanding of these machines that most technicians will never achieve.
+                </p>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    After years of building, Thomas transitioned to <strong>field service</strong>, spending years diagnosing failures, performing complex repairs, and keeping critical equipment operational for businesses across the region. He learned that downtime costs money, and customers need solutions—not excuses.
+                </p>
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    Most recently, Thomas served in <strong>service management</strong>, leading technical teams and preparing detailed estimates in SAP systems. This business perspective taught him the importance of accurate quoting, transparent communication, and delivering real value.
+                </p>
+            </div>
+            <!-- Career Timeline -->
+            <div class="bg-gray-50 rounded-lg shadow-lg p-8 mb-8">
+                <h3 class="text-2xl font-bold text-blue-900 mb-6 text-center">11 Years of Mastery</h3>
+                <div class="grid md:grid-cols-3 gap-8 mb-6">
+                    <div class="text-center">
+                        <div class="text-5xl font-bold text-blue-900 mb-2">Years 1-5</div>
+                        <div class="text-yellow-600 font-bold mb-2 text-lg">BUILDER</div>
+                        <p class="text-gray-600">Fabricating and customizing truck-mounted forklifts from the ground up</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-bold text-blue-900 mb-2">Years 5-8</div>
+                        <div class="text-yellow-600 font-bold mb-2 text-lg">TECHNICIAN</div>
+                        <p class="text-gray-600">Field service diagnosing and repairing equipment under pressure</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl font-bold text-blue-900 mb-2">Years 8-11</div>
+                        <div class="text-yellow-600 font-bold mb-2 text-lg">MANAGER</div>
+                        <p class="text-gray-600">Leading teams and preparing SAP estimates at scale</p>
+                    </div>
+                </div>
+                <p class="text-blue-900 font-bold text-xl text-center border-t pt-6 border-gray-300">
+                    Builder. Technician. Manager. Now bringing that complete expertise directly to your operation.
+                </p>
+            </div>
+            <!-- Core Values -->
+            <div class="bg-gradient-to-br from-blue-900 to-blue-800 text-white rounded-lg shadow-xl p-8 mb-8">
+                <h3 class="text-2xl font-bold mb-6 text-center">Our Core Values</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white bg-opacity-10 rounded-lg p-5 backdrop-blur">
+                        <h4 class="text-xl font-bold text-yellow-400 mb-3">🛡️ Integrity First</h4>
+                        <p class="text-sm leading-relaxed mb-2">
+                            Complete transparency from diagnosis to invoice. Fair pricing, honest assessments, no surprises. If we wouldn't do it to our own equipment, we won't do it to yours.
+                        </p>
+                        <p class="text-yellow-300 font-semibold text-sm italic">
+                            "Your trust is our foundation."
+                        </p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 rounded-lg p-5 backdrop-blur">
+                        <h4 class="text-xl font-bold text-yellow-400 mb-3">⚙️ Technical Excellence</h4>
+                        <p class="text-sm leading-relaxed mb-2">
+                            We've built these machines from scratch. That deep engineering knowledge means faster diagnosis, better repairs, and solutions that last.
+                        </p>
+                        <p class="text-yellow-300 font-semibold text-sm italic">
+                            "We don't just fix problems—we engineer solutions."
+                        </p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 rounded-lg p-5 backdrop-blur">
+                        <h4 class="text-xl font-bold text-yellow-400 mb-3">⏱️ Reliability You Count On</h4>
+                        <p class="text-sm leading-relaxed mb-2">
+                            Your downtime costs you money. We show up on time, work efficiently, and get you back to business fast. Our mobile service brings the shop to you.
+                        </p>
+                        <p class="text-yellow-300 font-semibold text-sm italic">
+                            "Your deadline is our deadline."
+                        </p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 rounded-lg p-5 backdrop-blur">
+                        <h4 class="text-xl font-bold text-yellow-400 mb-3">📈 Continuous Evolution</h4>
+                        <p class="text-sm leading-relaxed mb-2">
+                            Industry changes, equipment evolves. We stay ahead through training, investing in tools, and maintaining manufacturer relationships.
+                        </p>
+                        <p class="text-yellow-300 font-semibold text-sm italic">
+                            "Good enough isn't good enough."
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Why Choose Us Details -->
+            <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+                <h3 class="text-2xl font-bold text-blue-900 mb-6">5 Reasons to Choose Piggyback Pros</h3>
+                <div class="space-y-5">
+                    <div class="flex items-start border-l-4 border-yellow-500 pl-4">
+                        <div class="flex-shrink-0 text-yellow-500 text-3xl font-bold mr-4">1</div>
+                        <div>
+                            <h4 class="font-bold text-lg text-gray-800 mb-1">Builder's Perspective</h4>
+                            <p class="text-gray-600">Understanding from the ground up that most technicians never reach. We know every component, every failure point, every engineering decision.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start border-l-4 border-yellow-500 pl-4">
+                        <div class="flex-shrink-0 text-yellow-500 text-3xl font-bold mr-4">2</div>
+                        <div>
+                            <h4 class="font-bold text-lg text-gray-800 mb-1">Field-Tested Experience</h4>
+                            <p class="text-gray-600">Years diagnosing real-world problems under pressure. Emergency breakdowns, catastrophic failures, deadline repairs—we've seen it all.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start border-l-4 border-yellow-500 pl-4">
+                        <div class="flex-shrink-0 text-yellow-500 text-3xl font-bold mr-4">3</div>
+                        <div>
+                            <h4 class="font-bold text-lg text-gray-800 mb-1">Management-Level Insight</h4>
+                            <p class="text-gray-600">SAP-trained for accurate estimates and transparent communication. We understand your budget and deliver maximum value.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start border-l-4 border-yellow-500 pl-4">
+                        <div class="flex-shrink-0 text-yellow-500 text-3xl font-bold mr-4">4</div>
+                        <div>
+                            <h4 class="font-bold text-lg text-gray-800 mb-1">Specialized Focus</h4>
+                            <p class="text-gray-600">Moffett, Princeton, Palfinger, and all major truck-mounted forklift brands. This isn't a side service—it's what we do, and we're certified to do it right.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start border-l-4 border-yellow-500 pl-4">
+                        <div class="flex-shrink-0 text-yellow-500 text-3xl font-bold mr-4">5</div>
+                        <div>
+                            <h4 class="font-bold text-lg text-gray-800 mb-1">Mobile Convenience</h4>
+                            <p class="text-gray-600">No towing, no downtime transporting equipment. We come to you—warehouse, job site, or depot—fully equipped and ready to work.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Promise Section -->
+            <div class="bg-gradient-to-r from-yellow-500 to-yellow-400 rounded-lg shadow-xl p-8 text-center">
+                <h3 class="text-2xl font-bold text-blue-900 mb-4">The Piggyback Pros Promise</h3>
+                <p class="text-lg text-blue-900 leading-relaxed max-w-2xl mx-auto mb-4">
+                    When you call Piggyback Pros, you're getting a problem solver with 11 years of experience across every phase of the industry. We diagnose accurately, quote fairly, repair expertly, and stand behind our work. Your success is our success.
+                </p>
+                <div class="mt-6 pt-6 border-t-2 border-blue-900">
+                    <p class="text-2xl font-bold text-blue-900 italic mb-2">"Built Different. Serviced Better."</p>
+                    <p class="text-blue-900 font-semibold">— Thomas Colbert, Founder</p>
+                </div>
+                <div class="mt-6">
+                    <a href="#contact" class="inline-block bg-blue-900 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-800 transition shadow-lg">
+                        Work with the Pros
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Serving Tampa Bay &amp; Beyond</h2>
+                <p class="text-xl text-gray-600">Mobile service throughout the region</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-900 mb-4">Primary Service Areas</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-center">
+                                <span class="text-yellow-500 mr-3 text-xl">📍</span>
+                                Pasco County
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-yellow-500 mr-3 text-xl">📍</span>
+                                Hillsborough County
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-yellow-500 mr-3 text-xl">📍</span>
+                                Polk County
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-yellow-500 mr-3 text-xl">📍</span>
+                                Pinellas County
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-900 mb-4">Extended Coverage</h3>
+                        <p class="text-gray-700 mb-4">
+                            We also serve surrounding areas including Lakeland, Brandon, Plant City, and the greater Central Florida region. Contact us to confirm service availability in your location.
+                        </p>
+                        <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4">
+                            <p class="text-gray-800 font-semibold">
+                                💡 Outside our service area? We may still be able to help with major repairs or scheduled maintenance. Give us a call!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gradient-to-br from-blue-900 to-blue-800 text-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Get in Touch</h2>
+                <p class="text-xl text-blue-200">Ready to experience the Piggyback Pros difference?</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <!-- Contact Info -->
+                <div class="bg-white bg-opacity-10 backdrop-blur rounded-lg p-8">
+                    <h3 class="text-xl font-bold mb-6 text-yellow-500">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-4">📞</div>
+                            <div>
+                                <div class="font-bold mb-1">Phone</div>
+                                <a href="tel:8138973454" class="text-yellow-400 hover:text-yellow-300">(813) 897-3454</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-4">✉️</div>
+                            <div>
+                                <div class="font-bold mb-1">Email</div>
+                                <a href="mailto:piggybackproservices@outlook.com" class="text-yellow-400 hover:text-yellow-300 break-all text-sm">piggybackproservices@outlook.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-4">📍</div>
+                            <div>
+                                <div class="font-bold mb-1">Service Area</div>
+                                <p class="text-sm">Wesley Chapel, FL &amp; Tampa Bay</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-4">⏰</div>
+                            <div>
+                                <div class="font-bold mb-1">Hours</div>
+                                <p class="text-sm">Mon–Fri: 7am – 6pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Send Us a Message Form -->
+                <div class="bg-white text-gray-800 rounded-lg p-8 shadow-xl">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-6">Send Us a Message</h3>
+
+                    <div id="contact-success" class="hidden mb-4 bg-green-50 border border-green-400 text-green-800 rounded-lg p-4 text-sm">
+                        <strong class="block text-base mb-1">Message Sent!</strong>
+                        Thank you — we'll be in touch shortly.
+                    </div>
+                    <div id="contact-error" class="hidden mb-4 bg-red-50 border border-red-400 text-red-800 rounded-lg p-4 text-sm">
+                        <strong class="block text-base mb-1">Submission Error</strong>
+                        Something went wrong. Please call us at <a href="tel:8138973454" class="font-bold underline">(813) 897-3454</a>.
+                    </div>
+
+                    <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                        <input type="hidden" name="form-name" value="contact" />
+                        <div class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></div>
+
+                        <div class="mb-4">
+                            <label class="block text-sm font-bold text-gray-700 mb-1">Name <span class="text-red-500">*</span></label>
+                            <input type="text" name="name" required placeholder="Your Name"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-bold text-gray-700 mb-1">Email <span class="text-red-500">*</span></label>
+                            <input type="email" name="email" required placeholder="Your Email"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-bold text-gray-700 mb-1">Phone</label>
+                            <input type="tel" name="phone" placeholder="Your Phone Number"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-bold text-gray-700 mb-1">Message <span class="text-red-500">*</span></label>
+                            <textarea name="message" rows="5" required placeholder="Tell us about your needs"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 resize-none"></textarea>
+                        </div>
+                        <button type="submit" id="contact-submit-btn"
+                            class="w-full bg-yellow-500 text-blue-900 px-6 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition shadow-lg disabled:opacity-60 disabled:cursor-not-allowed">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Request Modal -->
+    <div id="service-modal" class="hidden fixed inset-0 z-50 bg-black bg-opacity-60 overflow-y-auto">
+        <div class="min-h-full flex items-start justify-center p-4 py-8">
+            <div class="bg-white rounded-lg shadow-2xl w-full max-w-4xl relative">
+                <!-- Modal Header -->
+                <div class="flex items-center justify-between bg-blue-900 text-white px-8 py-5 rounded-t-lg">
+                    <div>
+                        <h3 class="text-2xl font-bold">Service Request Form</h3>
+                        <p class="text-blue-200 text-sm mt-1">Complete the form below and we'll reach out promptly to schedule your service.</p>
+                    </div>
+                    <button id="close-service-modal" class="text-white hover:text-yellow-400 text-4xl font-bold leading-none ml-4 flex-shrink-0">&times;</button>
+                </div>
+
+                <div class="p-8">
+                    <!-- Status Messages -->
+                    <div id="form-success" class="hidden mb-6 bg-green-50 border border-green-400 text-green-800 rounded-lg p-4 text-sm">
+                        <strong class="block text-base mb-1">Request Submitted!</strong>
+                        Thank you — we've received your service request and will contact you shortly.
+                    </div>
+                    <div id="form-error" class="hidden mb-6 bg-red-50 border border-red-400 text-red-800 rounded-lg p-4 text-sm">
+                        <strong class="block text-base mb-1">Submission Error</strong>
+                        Something went wrong. Please call us directly at <a href="tel:8138973454" class="font-bold underline">(813) 897-3454</a>.
+                    </div>
+
+                    <form id="service-form" name="service-request" method="POST" data-netlify="true" enctype="multipart/form-data" netlify-honeypot="bot-field">
+                        <input type="hidden" name="form-name" value="service-request" />
+                        <input type="hidden" id="signature-data" name="signature" />
+                        <div class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></div>
+
+                        <!-- ── Section 1: Customer & Contact Information ── -->
+                        <div class="mb-8">
+                            <h4 class="text-sm font-bold text-white bg-blue-900 px-4 py-2 rounded-lg mb-4 uppercase tracking-wide">Customer &amp; Contact Information</h4>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-1">Customer / Company Name <span class="text-red-500">*</span></label>
+                                    <input type="text" name="company-name" required placeholder="Company or individual name"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-1">Contact Person</label>
+                                    <input type="text" name="contact-person" placeholder="Name of primary contact"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-1">Email Address <span class="text-red-500">*</span></label>
+                                    <input type="email" name="email" required placeholder="your@email.com"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-1">Phone Number <span class="text-red-500">*</span></label>
+                                    <input type="tel" name="phone" required placeholder="(555) 000-0000"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm">
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <label class="block text-sm font-bold text-gray-700 mb-1">Service Address / Location of Equipment <span class="text-red-500">*</span></label>
+                                <textarea name="service-address" rows="2" required placeholder="Street address, city, state — or describe the job site location"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm resize-none"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- ── Section 2: Equipment Information ── -->
+                        <div class="mb-8">
+                            <h4 class="text-sm font-bold text-white bg-blue-900 px-4 py-2 rounded-lg mb-4 uppercase tracking-wide">Equipment Information</h4>
+                            <div class="grid md:grid-cols-3 gap-4">
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-1">VIN / Serial Number</label>
+                                    <input type="text" name="vin-serial" placeholder="e.g. 1HGCM82633A004352"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-1">Year Built</label>
+                                    <input type="text" name="year-built" placeholder="e.g. 2018"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-1">Current Hour Meter Reading</label>
+                                    <input type="text" name="hour-meter" placeholder="e.g. 2,450 hrs"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm">
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="block text-sm font-bold text-gray-700 mb-1">Current Mileage / Odometer <span class="text-gray-400 font-normal">(if applicable)</span></label>
+                                    <input type="text" name="mileage" placeholder="e.g. 125,000 mi"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm">
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Engine Type</label>
+                                <div class="flex flex-wrap gap-x-6 gap-y-2">
+                                    <label class="flex items-center gap-2 cursor-pointer text-sm">
+                                        <input type="radio" name="engine-type" value="Diesel" class="accent-yellow-500"> Diesel
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer text-sm">
+                                        <input type="radio" name="engine-type" value="Gasoline" class="accent-yellow-500"> Gasoline
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer text-sm">
+                                        <input type="radio" name="engine-type" value="LPG" class="accent-yellow-500"> LPG
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer text-sm">
+                                        <input type="radio" name="engine-type" value="Electric" class="accent-yellow-500"> Electric
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ── Section 3: Problem Description ── -->
+                        <div class="mb-8">
+                            <h4 class="text-sm font-bold text-white bg-blue-900 px-4 py-2 rounded-lg mb-4 uppercase tracking-wide">Problem Description</h4>
+
+                            <div class="mb-4">
+                                <label class="block text-sm font-bold text-gray-700 mb-1">Detailed Problem Description <span class="text-red-500">*</span></label>
+                                <textarea name="problem-description" rows="4" required placeholder="Please describe the issue in as much detail as possible..."
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm"></textarea>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-1">When Did This Start?</label>
+                                    <input type="text" name="when-started" placeholder="e.g. 3 days ago, last Tuesday"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-2">Is the Equipment Currently Operational &amp; Safe to Operate?</label>
+                                    <div class="flex flex-wrap gap-x-5 gap-y-2">
+                                        <label class="flex items-center gap-2 cursor-pointer text-sm">
+                                            <input type="radio" name="is-operational" value="Yes" class="accent-yellow-500"> Yes
+                                        </label>
+                                        <label class="flex items-center gap-2 cursor-pointer text-sm">
+                                            <input type="radio" name="is-operational" value="No" class="accent-yellow-500"> No
+                                        </label>
+                                        <label class="flex items-center gap-2 cursor-pointer text-sm">
+                                            <input type="radio" name="is-operational" value="Unsure" class="accent-yellow-500"> Unsure
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Does This Occur?</label>
+                                <div class="flex flex-wrap gap-x-5 gap-y-2">
+                                    <label class="flex items-center gap-2 cursor-pointer text-sm">
+                                        <input type="radio" name="occurrence" value="Constantly" class="accent-yellow-500"> Constantly
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer text-sm">
+                                        <input type="radio" name="occurrence" value="Intermittently" class="accent-yellow-500"> Intermittently
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer text-sm">
+                                        <input type="radio" name="occurrence" value="Start Up" class="accent-yellow-500"> Start Up
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer text-sm">
+                                        <input type="radio" name="occurrence" value="Under Load Only" class="accent-yellow-500"> Under Load Only
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer text-sm">
+                                        <input type="radio" name="occurrence" value="During Travel" class="accent-yellow-500"> During Travel
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-sm font-bold text-gray-700 mb-1">Recent Maintenance or Repairs</label>
+                                <textarea name="recent-maintenance" rows="3" placeholder="Describe any recent maintenance or repairs performed (dates, parts replaced, service provider, etc.)"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm"></textarea>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Has This Issue Been Repaired Before?</label>
+                                <div class="flex flex-wrap gap-x-5 gap-y-2">
+                                    <label class="flex items-center gap-2 cursor-pointer text-sm">
+                                        <input type="radio" name="repaired-before" value="Yes" class="accent-yellow-500"> Yes
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer text-sm">
+                                        <input type="radio" name="repaired-before" value="No" class="accent-yellow-500"> No
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer text-sm">
+                                        <input type="radio" name="repaired-before" value="Unknown" class="accent-yellow-500"> Unknown
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ── Section 4: Photo Uploads ── -->
+                        <div class="mb-8">
+                            <h4 class="text-sm font-bold text-white bg-blue-900 px-4 py-2 rounded-lg mb-4 uppercase tracking-wide">Photos / Images</h4>
+                            <p class="text-sm text-gray-500 mb-4">Upload photos of the equipment or the problem area. Total upload limit is 8 MB. Accepted formats: JPG, PNG, HEIC, WebP.</p>
+                            <div class="grid md:grid-cols-3 gap-4">
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-1">Image 1</label>
+                                    <input type="file" name="image-1" accept="image/*"
+                                        class="w-full text-sm text-gray-600 file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-bold file:bg-yellow-50 file:text-blue-900 hover:file:bg-yellow-100 cursor-pointer border border-gray-300 rounded-lg py-1 px-2">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-1">Image 2</label>
+                                    <input type="file" name="image-2" accept="image/*"
+                                        class="w-full text-sm text-gray-600 file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-bold file:bg-yellow-50 file:text-blue-900 hover:file:bg-yellow-100 cursor-pointer border border-gray-300 rounded-lg py-1 px-2">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-1">Image 3</label>
+                                    <input type="file" name="image-3" accept="image/*"
+                                        class="w-full text-sm text-gray-600 file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-bold file:bg-yellow-50 file:text-blue-900 hover:file:bg-yellow-100 cursor-pointer border border-gray-300 rounded-lg py-1 px-2">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ── Section 5: Customer Authorization ── -->
+                        <div class="mb-8">
+                            <h4 class="text-sm font-bold text-white bg-blue-900 px-4 py-2 rounded-lg mb-4 uppercase tracking-wide">Customer Authorization</h4>
+
+                            <div class="bg-yellow-50 border-l-4 border-yellow-500 rounded-lg p-4 mb-4">
+                                <p class="text-sm text-gray-800">
+                                    <strong>Service Fee Disclosure:</strong> A <strong>$170.00 service fee</strong> is required to dispatch a technician. This fee covers travel and initial diagnostic assessment.
+                                </p>
+                            </div>
+
+                            <div class="bg-blue-50 border-l-4 border-blue-900 rounded-lg p-4 mb-6">
+                                <p class="text-sm text-gray-700 italic leading-relaxed">
+                                    "I authorize inspection and diagnostic services on the equipment listed above and understand that repair estimates will be provided prior to work being performed, unless otherwise authorized."
+                                </p>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6 mb-4">
+                                <!-- Signature Pad -->
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 mb-2">Signature <span class="text-red-500">*</span></label>
+                                    <div class="border-2 border-gray-300 rounded-lg overflow-hidden bg-gray-50">
+                                        <canvas id="signature-pad" style="width:100%;height:150px;display:block;touch-action:none;cursor:crosshair;"></canvas>
+                                    </div>
+                                    <div class="flex items-center justify-between mt-2">
+                                        <span class="text-xs text-gray-400">Sign above using your mouse or finger</span>
+                                        <button type="button" id="clear-signature" class="text-xs text-blue-600 hover:text-blue-800 underline">Clear</button>
+                                    </div>
+                                </div>
+
+                                <!-- Date -->
+                                <div class="flex flex-col justify-start">
+                                    <label class="block text-sm font-bold text-gray-700 mb-1" for="authorization-date">Date <span class="text-red-500">*</span></label>
+                                    <input type="date" id="authorization-date" name="authorization-date" required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm">
+                                </div>
+                            </div>
+
+                            <label class="flex items-start gap-3 cursor-pointer">
+                                <input type="checkbox" name="authorized" value="yes" required class="mt-1 accent-yellow-500 flex-shrink-0">
+                                <span class="text-sm text-gray-700">I have read and agree to the authorization statement above, including the $170.00 service fee. <span class="text-red-500">*</span></span>
+                            </label>
+                        </div>
+
+                        <!-- Submit -->
+                        <button type="submit" id="submit-btn"
+                            class="w-full bg-yellow-500 text-blue-900 px-6 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition shadow-lg disabled:opacity-60 disabled:cursor-not-allowed">
+                            Submit Service Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ── Modal Open / Close ─────────────────────────────────────────
+        const serviceModal = document.getElementById('service-modal');
+        let canvasInitialized = false;
+
+        function openServiceModal(e) {
+            if (e) e.preventDefault();
+            serviceModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            if (!canvasInitialized) {
+                initCanvas();
+                canvasInitialized = true;
+            }
+        }
+
+        function closeServiceModal() {
+            serviceModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('.open-service-modal').forEach(function(el) {
+            el.addEventListener('click', openServiceModal);
+        });
+
+        document.getElementById('close-service-modal').addEventListener('click', closeServiceModal);
+
+        serviceModal.addEventListener('click', function(e) {
+            if (e.target === serviceModal) closeServiceModal();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeServiceModal();
+        });
+
+        // ── Signature Pad ──────────────────────────────────────────────
+        const canvas = document.getElementById('signature-pad');
+        const ctx = canvas.getContext('2d');
+        let isDrawing = false;
+        let lastX = 0, lastY = 0;
+
+        function initCanvas() {
+            const rect = canvas.getBoundingClientRect();
+            canvas.width = rect.width || 480;
+            canvas.height = rect.height || 150;
+            ctx.lineWidth = 2.5;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.strokeStyle = '#1e3a5f';
+        }
+
+        function getXY(e) {
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+            if (e.touches) {
+                return {
+                    x: (e.touches[0].clientX - rect.left) * scaleX,
+                    y: (e.touches[0].clientY - rect.top) * scaleY
+                };
+            }
+            return {
+                x: (e.clientX - rect.left) * scaleX,
+                y: (e.clientY - rect.top) * scaleY
+            };
+        }
+
+        canvas.addEventListener('mousedown', function(e) {
+            isDrawing = true;
+            const p = getXY(e);
+            lastX = p.x; lastY = p.y;
+        });
+        canvas.addEventListener('mousemove', function(e) {
+            if (!isDrawing) return;
+            const p = getXY(e);
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(p.x, p.y);
+            ctx.stroke();
+            lastX = p.x; lastY = p.y;
+        });
+        canvas.addEventListener('mouseup', function() { isDrawing = false; });
+        canvas.addEventListener('mouseleave', function() { isDrawing = false; });
+
+        canvas.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            isDrawing = true;
+            const p = getXY(e);
+            lastX = p.x; lastY = p.y;
+        }, { passive: false });
+        canvas.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+            if (!isDrawing) return;
+            const p = getXY(e);
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(p.x, p.y);
+            ctx.stroke();
+            lastX = p.x; lastY = p.y;
+        }, { passive: false });
+        canvas.addEventListener('touchend', function() { isDrawing = false; });
+
+        document.getElementById('clear-signature').addEventListener('click', function() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        });
+
+        // ── Pre-fill today's date ──────────────────────────────────────
+        window.addEventListener('load', function() {
+            const d = new Date();
+            const pad = function(n) { return String(n).padStart(2, '0'); };
+            const today = d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+            document.getElementById('authorization-date').value = today;
+        });
+
+        // ── Contact Form AJAX Submission ───────────────────────────────
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const submitBtn = document.getElementById('contact-submit-btn');
+            const successMsg = document.getElementById('contact-success');
+            const errorMsg = document.getElementById('contact-error');
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending…';
+            successMsg.classList.add('hidden');
+            errorMsg.classList.add('hidden');
+
+            try {
+                const res = await fetch('/__forms.html', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(new FormData(form)).toString()
+                });
+                if (res.ok) {
+                    successMsg.classList.remove('hidden');
+                    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    form.reset();
+                } else {
+                    throw new Error('Non-OK response');
+                }
+            } catch (_) {
+                errorMsg.classList.remove('hidden');
+                errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            }
+        });
+
+        // ── Service Request Form AJAX Submission ───────────────────────
+        document.getElementById('service-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const submitBtn = document.getElementById('submit-btn');
+            const successMsg = document.getElementById('form-success');
+            const errorMsg = document.getElementById('form-error');
+
+            document.getElementById('signature-data').value = canvas.toDataURL('image/png');
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting…';
+            successMsg.classList.add('hidden');
+            errorMsg.classList.add('hidden');
+
+            try {
+                const res = await fetch('/__forms.html', {
+                    method: 'POST',
+                    body: new FormData(form)
+                });
+
+                if (res.ok) {
+                    successMsg.classList.remove('hidden');
+                    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    form.reset();
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    const d = new Date();
+                    const pad = function(n) { return String(n).padStart(2, '0'); };
+                    document.getElementById('authorization-date').value =
+                        d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+                } else {
+                    throw new Error('Non-OK response');
+                }
+            } catch (_) {
+                errorMsg.classList.remove('hidden');
+                errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Service Request';
+            }
+        });
+    </script>
+
+<script>
+(function () {
+  "use strict";
+
+  var key = "pbpLiveDemoReturnTop";
+
+  try {
+    if (sessionStorage.getItem(key) === "1") {
+      sessionStorage.removeItem(key);
+      window.scrollTo(0, 0);
+      requestAnimationFrame(function () { window.scrollTo(0, 0); });
+    }
+  } catch (e) {
+    window.scrollTo(0, 0);
+  }
+
+  var button = document.getElementById("pbpLiveDemoButton");
+  if (button) {
+    button.addEventListener("click", function () {
+      try {
+        sessionStorage.setItem(key, "1");
+      } catch (e) {}
+      window.location.reload();
+    });
+  }
+})();
+</script>
+
+
+<script>
+(function () {
+  'use strict';
+
+  var key = 'pbpLiveDemoReturnTop';
+
+  try {
+    if (sessionStorage.getItem(key) === '1') {
+      sessionStorage.removeItem(key);
+      window.scrollTo(0, 0);
+      requestAnimationFrame(function () { window.scrollTo(0, 0); });
+    }
+  } catch (e) {
+    window.scrollTo(0, 0);
+  }
+
+  var liveButton = document.getElementById('pbpLiveDemoButton');
+  if (liveButton) {
+    liveButton.addEventListener('click', function () {
+      try { sessionStorage.setItem(key, '1'); } catch (e) {}
+      window.location.reload();
+    });
+  }
+
+  var sheet = document.getElementById('pbpDemoSheet');
+  var info = document.querySelector('.demo-bar__info');
+  var close = document.querySelector('.demo-sheet__close');
+
+  function toggleInfo(open) {
+    if (!sheet) return;
+    sheet.classList.toggle('is-open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  if (info) info.addEventListener('click', function () { toggleInfo(true); });
+  if (close) close.addEventListener('click', function () { toggleInfo(false); });
+
+  if (sheet) {
+    sheet.addEventListener('click', function (event) {
+      if (event.target === sheet) toggleInfo(false);
+    });
+  }
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && sheet && sheet.classList.contains('is-open')) {
+      toggleInfo(false);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
