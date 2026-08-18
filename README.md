@@ -50,6 +50,8 @@ For **Netlify**, keep the included `netlify.toml` and `__forms.html` files.
 **Status:** Live Demo
 
 
+## Portfolio Author
+
 **Moiz Ahmad**
 
 - Email: moizahmad418@gmail.com
